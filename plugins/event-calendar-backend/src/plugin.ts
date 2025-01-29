@@ -27,6 +27,11 @@ export const eventCalendarBackendPlugin = createBackendPlugin({
             eventService,
           }),
         );
+
+        httpRouter.addAuthPolicy({
+          path: '/events',
+          allow: 'unauthenticated',
+        });
       },
     });
   },

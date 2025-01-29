@@ -2,12 +2,23 @@ import {
   LoggerService,
   RootConfigService,
 } from '@backstage/backend-plugin-api/index';
-import { EventService } from './types';
+import { Event, EventService } from './types';
+import { z } from 'zod';
 
 interface Options {
   config: RootConfigService;
   logger: LoggerService;
 }
+
+const EventSchema = z.object({
+  id: z.number(),
+  title: z.string(),
+  start: z.string(),
+  end: z.string(),
+  rrule: z.string().optional(),
+});
+
+const EventsArraySchema = z.array(EventSchema);
 
 export const CreateEventService = async ({
   config,
@@ -17,12 +28,12 @@ export const CreateEventService = async ({
 
   return {
     async getEvents() {
-      const configEvents = config.getConfigArray('events-calendar.events');
+      const configEvents = config.get('events-calendar.events') as Event[];
 
-      console.log(configEvents);
+      const { success } = EventsArraySchema.safeParse(configEvents);
 
       return {
-        events: [],
+        events: success ? configEvents : [],
       };
     },
   };
