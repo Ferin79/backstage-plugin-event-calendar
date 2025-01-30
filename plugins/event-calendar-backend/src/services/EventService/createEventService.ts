@@ -1,9 +1,10 @@
 import {
   LoggerService,
   RootConfigService,
-} from '@backstage/backend-plugin-api/index';
+} from '@backstage/backend-plugin-api';
 import { Event, EventService } from './types';
 import { z } from 'zod';
+import { getRecurringEvents } from '../../utils/getRecurringEvents';
 
 interface Options {
   config: RootConfigService;
@@ -18,8 +19,6 @@ const EventSchema = z.object({
   rrule: z.string().optional(),
 });
 
-const EventsArraySchema = z.array(EventSchema);
-
 export const CreateEventService = async ({
   config,
   logger,
@@ -29,12 +28,13 @@ export const CreateEventService = async ({
   return {
     async getEvents() {
       const configEvents = config.get('events-calendar.events') as Event[];
-
-      const { success } = EventsArraySchema.safeParse(configEvents);
-
-      return {
-        events: success ? configEvents : [],
-      };
+      if (
+        !Array.isArray(configEvents) ||
+        !configEvents.every(e => EventSchema.safeParse(e).success)
+      ) {
+        return { events: [] };
+      }
+      return { events: configEvents.flatMap(getRecurringEvents) };
     },
   };
 };
