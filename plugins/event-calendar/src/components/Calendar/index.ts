@@ -1,0 +1,1 @@
+export { EventCalendarComponent } from './CalendarComponent';

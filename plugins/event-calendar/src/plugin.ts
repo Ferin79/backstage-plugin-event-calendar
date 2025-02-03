@@ -16,7 +16,7 @@ export const EventCalendarPage = eventCalendarPlugin.provide(
   createRoutableExtension({
     name: 'EventCalendarPage',
     component: () =>
-      import('./components/ExampleComponent').then(m => m.ExampleComponent),
+      import('./components/Calendar').then(m => m.EventCalendarComponent),
     mountPoint: rootRouteRef,
   }),
 );
