@@ -1,1 +1,2 @@
-export { EventCalendarComponent } from './CalendarComponent';
+export { EventCalendarPage } from './EventCalendarPage';
+export { EventCalendarCard } from './EventCalendarCard';

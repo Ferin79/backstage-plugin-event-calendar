@@ -58,6 +58,7 @@ import {
   EntityKubernetesContent,
   isKubernetesAvailable,
 } from '@backstage/plugin-kubernetes';
+import { EventCalendarCard } from '@internal/backstage-plugin-event-calendar';
 
 const techdocsContent = (
   <EntityTechdocsContent>
@@ -141,6 +142,9 @@ const overviewContent = (
     </Grid>
     <Grid item md={8} xs={12}>
       <EntityHasSubcomponentsCard variant="gridItem" />
+    </Grid>
+    <Grid item md={4} xs={12}>
+      <EventCalendarCard />
     </Grid>
   </Grid>
 );

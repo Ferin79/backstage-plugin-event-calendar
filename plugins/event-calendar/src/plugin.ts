@@ -1,4 +1,5 @@
 import {
+  createComponentExtension,
   createPlugin,
   createRoutableExtension,
 } from '@backstage/core-plugin-api';
@@ -16,7 +17,17 @@ export const EventCalendarPage = eventCalendarPlugin.provide(
   createRoutableExtension({
     name: 'EventCalendarPage',
     component: () =>
-      import('./components/Calendar').then(m => m.EventCalendarComponent),
+      import('./components/Calendar').then(m => m.EventCalendarPage),
     mountPoint: rootRouteRef,
+  }),
+);
+
+export const EventCalendarCard = eventCalendarPlugin.provide(
+  createComponentExtension({
+    name: 'EventCalendarCard',
+    component: {
+      lazy: () =>
+        import('./components/Calendar').then(m => m.EventCalendarCard),
+    },
   }),
 );

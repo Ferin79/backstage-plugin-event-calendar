@@ -1,1 +1,5 @@
-export { eventCalendarPlugin, EventCalendarPage } from './plugin';
+export {
+  eventCalendarPlugin,
+  EventCalendarPage,
+  EventCalendarCard,
+} from './plugin';
