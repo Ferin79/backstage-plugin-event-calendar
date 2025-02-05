@@ -16,7 +16,7 @@ const EventSchema = z.object({
   title: z.string(),
   start: z.string(),
   end: z.string(),
-  rrule: z.string().optional(),
+  recurrence: z.string().optional(),
 });
 
 export const CreateEventService = async ({
@@ -27,7 +27,9 @@ export const CreateEventService = async ({
 
   return {
     async getEvents() {
-      const configEvents = config.get('events-calendar.events') as Event[];
+      const configEvents = config.get(
+        'eventsCalendar.sources.localEvents',
+      ) as Event[];
       if (
         !Array.isArray(configEvents) ||
         !configEvents.every(e => EventSchema.safeParse(e).success)

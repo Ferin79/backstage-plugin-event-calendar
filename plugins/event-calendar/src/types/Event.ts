@@ -1,4 +1,4 @@
-export interface EventResource {
+export interface EventMetadata {
   location?: string;
   meetingLink?: string;
 }
@@ -6,12 +6,12 @@ export interface EventResource {
 export interface Event {
   id: number;
   title: string;
-  start: string;
-  end: string;
-  desc?: string;
-  rrule?: string;
+  start: string; // ISO string or date-time format
+  end: string; // ISO string or date-time format
   allDay?: boolean;
-  resource?: EventResource;
+  recurrence?: string; // iCalendar RFC 5545 format
+  description?: string;
+  metadata?: EventMetadata;
 }
 
 export interface EventsResponse {

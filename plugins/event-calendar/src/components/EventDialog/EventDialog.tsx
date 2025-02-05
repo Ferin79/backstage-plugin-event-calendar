@@ -64,14 +64,14 @@ const EventDialog: React.FC<EventDialogProps> = ({
           </>
         )}
 
-        {selectedEvent?.resource?.location && (
+        {selectedEvent?.metadata?.location && (
           <Typography className={classes.iconText} variant="body2">
             <LocationOnIcon fontSize="small" /> Location:{' '}
-            <strong>{selectedEvent.resource.location}</strong>
+            <strong>{selectedEvent.metadata.location}</strong>
           </Typography>
         )}
-        {selectedEvent?.desc && (
-          <Typography variant="body2">{selectedEvent.desc}</Typography>
+        {selectedEvent?.description && (
+          <Typography variant="body2">{selectedEvent.description}</Typography>
         )}
       </DialogContent>
       <DialogActions>
@@ -82,13 +82,13 @@ const EventDialog: React.FC<EventDialogProps> = ({
         >
           Close
         </Button>
-        {selectedEvent?.resource?.meetingLink && (
+        {selectedEvent?.metadata?.meetingLink && (
           <Button
             color="primary"
             variant="contained"
             className={classes.actionButton}
             onClick={() =>
-              window.open(selectedEvent.resource!.meetingLink, '_blank')
+              window.open(selectedEvent.metadata!.meetingLink, '_blank')
             }
           >
             Join Meeting

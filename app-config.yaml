@@ -112,25 +112,29 @@ permission:
   # setting this to `false` will disable permissions
   enabled: true
 
-events-calendar:
-  events:
-    - id: 1
-      title: 'Office Hours'
-      start: '2025-02-25 10:15'
-      end: '2025-02-25 11:30'
+eventsCalendar:
+  sources:
+    urls:
+      - 'https://example.com/events1.json'
+      - 'https://example.com/events2.json'
+    localEvents:
+      - id: 1
+        title: 'Office Hours'
+        start: '2025-02-25 10:15'
+        end: '2025-02-25 11:30'
 
-    - id: 2
-      title: 'Ski Trip'
-      start: '2025-02-05'
-      end: '2025-02-05'
-      allDay: true
+      - id: 2
+        title: 'Ski Trip'
+        start: '2025-02-05'
+        end: '2025-02-05'
+        allDay: true
 
-    - id: 3
-      title: 'DevX Meeting'
-      start: '2024-02-10T10:00:00.000Z'
-      end: '2024-02-10T11:00:00.000Z'
-      rrule: 'FREQ=WEEKLY;INTERVAL=2;BYDAY=MO,WE;UNTIL=20260229T235959'
-      desc: 'Discuss the future of DevX'
-      resource:
-        location: 'Room 101'
-        meetingLink: 'https://meet.google.com/abc-xyz'
+      - id: 3
+        title: 'DevX Meeting'
+        start: '2024-02-10T10:00:00.000Z'
+        end: '2024-02-10T11:00:00.000Z'
+        recurrence: 'FREQ=WEEKLY;INTERVAL=2;BYDAY=MO,WE;UNTIL=20260229T235959'
+        desc: 'Discuss the future of DevX'
+        metadata:
+          location: 'Room 101'
+          meetingLink: 'https://meet.google.com/abc-xyz'
