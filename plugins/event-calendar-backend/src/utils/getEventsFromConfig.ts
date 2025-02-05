@@ -3,15 +3,15 @@ import {
   RootConfigService,
   UrlReaderService,
 } from '@backstage/backend-plugin-api';
-import {
-  EventsCalendarConfig,
-  Event,
-  UrlEvents,
-} from '../services/EventService/types';
-import * as path from 'path';
 import * as fs from 'fs';
+import * as path from 'path';
 import yaml from 'yaml';
 import { z } from 'zod';
+import {
+  Event,
+  EventsCalendarConfig,
+  UrlEvents,
+} from '../services/EventService/types';
 import { getRecurringEvents } from './getRecurringEvents';
 
 const EventSchema = z.object({
@@ -70,7 +70,7 @@ export const getEventsFromConfig = async ({
     return [];
   }
 
-  const localEvents = eventsCalendar.sources.localEvents || [];
+  const localEvents = eventsCalendar.sources.events || [];
   const urls = eventsCalendar.sources.urls || [];
 
   const fetchedEvents = await Promise.all(

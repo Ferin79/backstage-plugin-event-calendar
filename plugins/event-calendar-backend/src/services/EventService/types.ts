@@ -17,7 +17,7 @@ export interface Event {
 export interface EventsCalendarConfig {
   sources: {
     urls?: string[];
-    localEvents?: Event[];
+    events?: Event[];
   };
 }
 
