@@ -14,6 +14,17 @@ export interface Event {
   metadata?: EventMetadata;
 }
 
+export interface EventsCalendarConfig {
+  sources: {
+    urls?: string[];
+    localEvents?: Event[];
+  };
+}
+
+export interface UrlEvents {
+  events: Event[];
+}
+
 export interface EventService {
   getEvents(): Promise<{ events: Event[] }>;
 }

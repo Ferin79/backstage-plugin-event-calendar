@@ -1,0 +1,54 @@
+{
+  "events": [
+    {
+      "id": 11,
+      "title": "Tech Conference",
+      "start": "2025-03-10T09:00:00.000Z",
+      "end": "2025-03-10T17:00:00.000Z",
+      "allDay": false,
+      "metadata": {
+        "location": "Convention Center",
+        "meetingLink": "https://zoom.us/tech-conference"
+      }
+    },
+    {
+      "id": 12,
+      "title": "Monthly Leadership Meeting",
+      "start": "2025-04-05T14:00:00.000Z",
+      "end": "2025-04-05T15:30:00.000Z",
+      "recurrence": "FREQ=MONTHLY;BYDAY=1FR;UNTIL=20261231T235959",
+      "metadata": {
+        "meetingLink": "https://meet.google.com/leadership-monthly"
+      }
+    },
+    {
+      "id": 13,
+      "title": "Hackathon Kickoff",
+      "start": "2025-06-15T10:00:00.000Z",
+      "end": "2025-06-15T18:00:00.000Z",
+      "metadata": {
+        "location": "Main Office",
+        "meetingLink": "https://meet.google.com/hackathon"
+      }
+    },
+    {
+      "id": 14,
+      "title": "Annual Company Retreat",
+      "start": "2025-09-20",
+      "end": "2025-09-22",
+      "allDay": true,
+      "metadata": {
+        "location": "Mountain Resort"
+      }
+    },
+    {
+      "id": 15,
+      "title": "End-of-Year Celebration",
+      "start": "2026-12-20T18:00:00.000Z",
+      "end": "2026-12-20T23:00:00.000Z",
+      "metadata": {
+        "location": "Company HQ"
+      }
+    }
+  ]
+}

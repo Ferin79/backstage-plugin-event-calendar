@@ -115,8 +115,8 @@ permission:
 eventsCalendar:
   sources:
     urls:
-      - 'https://example.com/events1.json'
-      - 'https://example.com/events2.json'
+      - '../../examples/events.json'
+      - '../../examples/events.yaml'
     localEvents:
       - id: 1
         title: 'Office Hours'

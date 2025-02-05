@@ -4,6 +4,7 @@ import {
 } from '@backstage/backend-plugin-api';
 import { createRouter } from './router';
 import { CreateEventService } from './services/EventService/createEventService';
+import { getEventsFromConfig } from './utils/getEventsFromConfig';
 
 /**
  * eventCalendarBackendPlugin backend plugin
@@ -18,9 +19,15 @@ export const eventCalendarBackendPlugin = createBackendPlugin({
         logger: coreServices.logger,
         httpRouter: coreServices.httpRouter,
         config: coreServices.rootConfig,
+        urlReader: coreServices.urlReader,
       },
-      async init({ logger, httpRouter, config }) {
-        const eventService = await CreateEventService({ config, logger });
+      async init({ logger, httpRouter, config, urlReader }) {
+        const events = await getEventsFromConfig({ config, logger, urlReader });
+
+        const eventService = await CreateEventService({
+          logger,
+          events,
+        });
 
         httpRouter.use(
           await createRouter({

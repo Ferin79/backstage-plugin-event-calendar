@@ -1,0 +1,75 @@
+events:
+  - id: 1
+    title: 'New Year Celebration'
+    start: '2025-01-01'
+    end: '2025-01-01'
+    allDay: true
+
+  - id: 2
+    title: 'Quarterly Review Meeting'
+    start: '2025-01-15T14:00:00.000Z'
+    end: '2025-01-15T15:30:00.000Z'
+    recurrence: 'FREQ=MONTHLY;INTERVAL=3;BYMONTHDAY=15;UNTIL=20261231T235959'
+    metadata:
+      location: 'Conference Room A'
+      meetingLink: 'https://meet.google.com/review-q1'
+
+  - id: 3
+    title: 'Team Lunch'
+    start: '2025-02-10T12:00:00.000Z'
+    end: '2025-02-10T13:30:00.000Z'
+    metadata:
+      location: 'The Grand Bistro'
+
+  - id: 4
+    title: 'Company Town Hall'
+    start: '2025-03-05T10:00:00.000Z'
+    end: '2025-03-05T11:30:00.000Z'
+    recurrence: 'FREQ=YEARLY;BYMONTH=3;BYMONTHDAY=5;UNTIL=20261231T235959'
+    metadata:
+      location: 'Auditorium'
+      meetingLink: 'https://zoom.us/townhall-2025'
+
+  - id: 5
+    title: 'Product Launch Event'
+    start: '2025-05-20T09:00:00.000Z'
+    end: '2025-05-20T12:00:00.000Z'
+    metadata:
+      location: 'Main Hall'
+      meetingLink: 'https://meet.google.com/product-launch'
+
+  - id: 6
+    title: 'Annual Ski Trip'
+    start: '2025-12-18'
+    end: '2025-12-20'
+    allDay: true
+
+  - id: 7
+    title: 'Weekly Stand-up Meeting'
+    start: '2026-01-06T09:00:00.000Z'
+    end: '2026-01-06T09:30:00.000Z'
+    recurrence: 'FREQ=WEEKLY;BYDAY=TU;UNTIL=20261231T235959'
+    metadata:
+      meetingLink: 'https://meet.google.com/standup-2026'
+
+  - id: 8
+    title: 'Cybersecurity Awareness Training'
+    start: '2026-04-12T13:00:00.000Z'
+    end: '2026-04-12T14:30:00.000Z'
+    metadata:
+      location: 'Room 202'
+
+  - id: 9
+    title: 'Summer Company Picnic'
+    start: '2026-07-22'
+    end: '2026-07-22'
+    allDay: true
+    metadata:
+      location: 'City Park'
+
+  - id: 10
+    title: 'End-of-Year Budget Review'
+    start: '2026-12-10T15:00:00.000Z'
+    end: '2026-12-10T16:30:00.000Z'
+    metadata:
+      meetingLink: 'https://meet.google.com/budget-2026'
