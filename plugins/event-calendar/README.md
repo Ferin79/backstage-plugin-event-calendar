@@ -60,7 +60,7 @@ To start using the Event Calendar Plugin, follow these steps:
 
 You need to set up the Event Calendar backend plugin before you move forward with any of the following steps if you haven't already.
 
-### Installation
+#### Installation
 
 - Install Dependency:
 
@@ -87,7 +87,7 @@ You need to set up the Event Calendar backend plugin before you move forward wit
   <SidebarItem icon={EventNoteIcon} to="event-calendar" text="Events" />;
   ```
 
-### YAML Configuration Example
+### YAML Configuration Example (app-config.yaml)
 
 ```yaml
 eventsCalendar:
@@ -117,3 +117,47 @@ eventsCalendar:
           location: 'Room 101'
           meetingLink: 'https://meet.google.com/abc-xyz'
 ```
+
+#### Example JSON file
+
+```json
+{
+  "events": [
+    {
+      "id": 11,
+      "title": "Tech Conference",
+      "start": "2025-03-10T09:00:00.000Z",
+      "end": "2025-03-10T17:00:00.000Z",
+      "allDay": false,
+      "metadata": {
+        "location": "Convention Center",
+        "meetingLink": "https://zoom.us/tech-conference"
+      }
+    }
+  ]
+}
+```
+
+#### Example YAML file
+
+```yaml
+events:
+  - id: 1
+    title: 'New Year Celebration'
+    start: '2025-01-01'
+    end: '2025-01-01'
+    allDay: true
+```
+
+#### Event Object
+
+| Field                  | Type      | Description                                                                  | Required |
+| ---------------------- | --------- | ---------------------------------------------------------------------------- | -------- |
+| `id`                   | `number`  | Unique identifier for the event.                                             | Yes      |
+| `title`                | `string`  | Title or name of the event.                                                  | Yes      |
+| `start`                | `string`  | Start date and time of the event in ISO 8601 format.                         | Yes      |
+| `end`                  | `string`  | End date and time of the event in ISO 8601 format.                           | Yes      |
+| `allDay`               | `boolean` | Flag indicating whether the event is an all-day event.                       | No       |
+| `metadata`             | `object`  | Additional event-related information. Contains `location` and `meetingLink`. | No       |
+| `metadata.location`    | `string`  | Location where the event will take place.                                    | No       |
+| `metadata.meetingLink` | `string`  | URL link for joining the event (e.g., Zoom link).                            | No       |
