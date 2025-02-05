@@ -36,7 +36,7 @@ import { AppRouter, FlatRoutes } from '@backstage/core-app-api';
 import { CatalogGraphPage } from '@backstage/plugin-catalog-graph';
 import { RequirePermission } from '@backstage/plugin-permission-react';
 import { catalogEntityCreatePermission } from '@backstage/plugin-catalog-common/alpha';
-import { EventCalendarPage } from '@internal/backstage-plugin-event-calendar';
+import { EventCalendarPage } from 'backstage-plugin-event-calendar';
 
 const app = createApp({
   apis,

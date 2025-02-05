@@ -10,18 +10,19 @@ This plugin offers a simple, non-intrusive way to track and join events in your 
 
 In large organizations with multiple teams hosting regular events, it's easy to get overwhelmed by invitations and cluttered calendars. The Event Calendar Plugin lets teams list events that are optional for anyone to attend, without the need to send invites or overload individual calendars.
 
-## Features
-
-- **Event Loading**: Load events directly from files.
-- **Recurring Events**: Support for setting up recurring meetings or events.
-- **Full Page Component**: Display events in a dedicated page.
-- **Card Component**: Today's events displayed in a concise, easy-to-read card format.
-
-### Example Use Case:
+#### Example Use Case:
 
 If your organization has several teams with rotating office hours or recurring review meetings, the plugin allows these teams to list their events in a shared calendar. Team members can view and join any event that interests them, without needing to manage cluttered invites.
 
 This plugin is especially useful for large teams, collaborative groups, or departments that run regular, but optional, meetings.
+
+## Screenshots
+
+![All Events / Meetings](./examples/all-events.png 'All Events / Meetings')
+
+![Event Details](./examples/event-detail.png 'Event Details')
+
+![Event Card](./examples/events-card.png 'Events Card')
 
 ## Setup
 
@@ -39,7 +40,7 @@ To start using the Event Calendar Plugin, follow these steps:
 
   ```bash
   # From your Backstage root directory
-  yarn --cwd packages/backend add @backstage-community/plugin-event-calendar-backend
+  yarn --cwd packages/backend add backstage-plugin-event-calendar-backend
   ```
 
 - Configure:
@@ -51,7 +52,7 @@ To start using the Event Calendar Plugin, follow these steps:
 
   const backend = createBackend();
 
-  backend.add(import('@backstage-community/plugin-event-calendar-backend'));
+  backend.add(import('backstage-plugin-event-calendar-backend'));
 
   backend.start();
   ```
@@ -66,7 +67,7 @@ You need to set up the Event Calendar backend plugin before you move forward wit
 
   ```bash
   # From your Backstage root directory
-  yarn --cwd packages/app add @backstage-community/plugin-event-calendar
+  yarn --cwd packages/app add backstage-plugin-event-calendar
   ```
 
 - Configure Routes:
@@ -74,7 +75,7 @@ You need to set up the Event Calendar backend plugin before you move forward wit
   **App.tsx**
 
   ```javascript
-  import { EventCalendarPage } from '@backstage-community/plugin-event-calendar';
+  import { EventCalendarPage } from 'backstage-plugin-event-calendar';
 
   <Route path="/event-calendar" element={<EventCalendarPage />} />;
   ```

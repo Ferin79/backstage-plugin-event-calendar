@@ -58,7 +58,7 @@ import {
   EntityKubernetesContent,
   isKubernetesAvailable,
 } from '@backstage/plugin-kubernetes';
-import { EventCalendarCard } from '@internal/backstage-plugin-event-calendar';
+import { EventCalendarCard } from 'backstage-plugin-event-calendar';
 
 const techdocsContent = (
   <EntityTechdocsContent>
