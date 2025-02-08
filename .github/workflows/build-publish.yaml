@@ -42,6 +42,7 @@ jobs:
         with:
           node-version: '18'
           cache: yarn
+          always-auth: true
 
       - name: Install Dependencies
         run: cd plugins/event-calendar-backend && yarn install
