@@ -1,0 +1,55 @@
+name: Build And Publish
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-publish-frontend:
+    name: Build Publish Frontend
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: yarn
+
+      - name: Install Dependencies
+        run: cd plugins/event-calendar && yarn install
+
+      - name: Build
+        run: cd plugins/event-calendar && yarn build
+
+      - name: Publish
+        run: cd plugins/event-calendar && yarn publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  build-publish-backend:
+    name: Build Publish Backend
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: yarn
+
+      - name: Install Dependencies
+        run: cd plugins/event-calendar-backend && yarn install
+
+      - name: Build
+        run: cd plugins/event-calendar-backend && yarn build
+
+      - name: Publish
+        run: cd plugins/event-calendar-backend && yarn publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
