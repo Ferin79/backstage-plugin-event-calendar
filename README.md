@@ -18,11 +18,11 @@ This plugin is especially useful for large teams, collaborative groups, or depar
 
 ## Screenshots
 
-![All Events / Meetings](./examples/all-events.png 'All Events / Meetings')
+![All Events / Meetings](https://raw.githubusercontent.com/Ferin79/backstage-plugin-event-calendar/refs/heads/main/examples/all-events.png 'All Events / Meetings')
 
-![Event Details](./examples/event-detail.png 'Event Details')
+![Event Details](https://raw.githubusercontent.com/Ferin79/backstage-plugin-event-calendar/refs/heads/main/examples/event-detail.png 'Event Details')
 
-![Event Card](./examples/events-card.png 'Events Card')
+![Event Card](https://raw.githubusercontent.com/Ferin79/backstage-plugin-event-calendar/refs/heads/main/examples/events-card.png 'Events Card')
 
 ## Setup
 
