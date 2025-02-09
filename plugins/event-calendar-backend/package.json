@@ -11,7 +11,12 @@
     "types": "dist/index.d.ts"
   },
   "backstage": {
-    "role": "backend-plugin"
+    "role": "backend-plugin",
+    "pluginId": "event-calendar-backend",
+    "pluginPackages": [
+      "backstage-plugin-event-calendar",
+      "backstage-plugin-event-calendar-backend"
+    ]
   },
   "scripts": {
     "start": "backstage-cli package start",
