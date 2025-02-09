@@ -27,6 +27,9 @@ jobs:
       - name: Build
         run: cd plugins/event-calendar && yarn build
 
+      - name: copy Readme
+        run: cp README.md plugins/event-calendar/README.md
+
       - name: Publish
         run: cd plugins/event-calendar && yarn publish
         env:
@@ -52,6 +55,9 @@ jobs:
 
       - name: Build
         run: cd plugins/event-calendar-backend && yarn build
+
+      - name: copy Readme
+        run: cp README.md plugins/event-calendar-backend/README.md
 
       - name: Publish
         run: cd plugins/event-calendar-backend && yarn publish
