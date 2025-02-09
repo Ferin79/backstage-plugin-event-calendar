@@ -1,0 +1,37 @@
+name: Build & Publish Frontend
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'plugins/event-calendar/**'
+
+jobs:
+  build-publish-frontend:
+    name: Build Publish Frontend
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: yarn
+          always-auth: true
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install Dependencies
+        run: cd plugins/event-calendar && yarn install
+
+      - name: Build
+        run: cd plugins/event-calendar && yarn build
+
+      - name: copy Readme
+        run: cp README.md plugins/event-calendar/README.md
+
+      - name: Publish
+        run: cd plugins/event-calendar && yarn publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
